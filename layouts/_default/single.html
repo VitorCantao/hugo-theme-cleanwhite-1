@@ -24,6 +24,9 @@
                     <h1>{{ .Title }}</h1>
                     <h2 class="subheading">{{ .Params.subtitle }}</h2>
                     <span class="meta">
+                        {{ if .Params.coauthor }}
+                        Featuring {{ .Params.coauthor }}, 
+                        {{ end }}
                         {{ if .Params.metadata }}
                             {{ range $index, $element := .Params.metadata }}
                                 {{ if .link }}
